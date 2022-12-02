@@ -1,0 +1,165 @@
+body {
+  font-family: "Marcellus", serif;
+  font-size: 1.2rem;
+  color: #787A91;
+  background-color: #132237;
+
+}
+
+/* a {
+  text-decoration: none;
+  color: #787A91;
+}
+
+a:hover {
+  color: #DB1910;
+} */
+
+a.itemLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.itemLink {
+  background:
+    linear-gradient(to right,
+      rgba(191, 212, 233, 1),
+      rgba(191, 212, 233, 1)),
+    linear-gradient(to right,
+      rgba(15, 4, 76, 0.8),
+      rgba(191, 212, 233, 0.8));
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+a:hover.itemLink {
+  color: #0F044C;
+  background-size: 0 3px, 100% 3px;
+}
+
+a.icon {
+  color: #7594B1;
+
+}
+
+a:hover.icon {
+  color: #FDDA7E;
+}
+
+.photos-sm {
+  border-radius: 50%;
+  height: 100px;
+  margin: auto;
+  opacity: 0.85;
+}
+
+
+img:hover {
+  opacity: 1.0;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  color: #0F044C;
+}
+
+/* h1::first-letter {
+  color: #DB1910;
+} */
+
+/* li {
+  list-style-type: upper-roman;
+  
+} */
+
+.container-fluid {
+  padding: 3% 5%;
+  width: 50%;
+  border-radius: 25% 10%;
+  margin-top: 20px;
+  position: relative;
+  background: rgba(191, 212, 233, .9);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.card-footer {
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.form-custom {
+  color: #0F044C;
+  background-color: transparent;
+  border: 1px solid #6c757d;
+}
+
+.form-custom:focus {
+  color: #368500;
+  border: 1px solid #eccb7a;
+  box-shadow: 0 0 0 0.25rem rgba(53, 122, 145, 25%);
+}
+
+.list-item {
+  line-height: 2.5;
+}
+
+.list-group-user {
+  padding: 16px;
+  line-height: 2.5;
+}
+
+.image-user,
+.header-user {
+  text-align: center;
+}
+
+.single-person img {
+  -webkit-transform: rotate(0) scale(1);
+  transform: rotate(0) scale(1);
+}
+
+.single-person:hover img {
+  -webkit-transform: rotate(10deg) scale(1.2);
+  transform: rotate(10deg) scale(1.2);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.photos-bg {
+  border-radius: 50%;
+  height: 200px;
+  margin: auto;
+  opacity: 0.70;
+}
+
+.single-person {
+  margin: 25px;
+}
+
+/* footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+} */
+
+.background-image {
+  position: absolute;
+  bottom: 0;
+}
+
+.background-image img {
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 1)));
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,43 @@
+<%- include("partials/header"); -%>
+
+<div id="<%=person%>" class="container-fluid">
+  <div class="card-header">
+
+    <div class="image-user">
+      <img src="images/<%=person%>.jpg" class="photos-sm">
+    </div>
+    <div class="header-user">
+      <h1><%=person%></h1>
+    </div>
+  </div>
+  <div class="list-group-user">
+    <ol class="list-group">
+      <% items.forEach(function(item) { %>
+      <li>
+        <%if (item.link) {%>
+        <a class="itemLink" target="_blank" rel="noopener noreferrer" href="<%= item.link %>"><%= item.item %></a>
+        <% } else {%>
+        <%= item.item %>
+        <% }%>
+
+      </li>
+      <% }); %>
+    </ol>
+  </div>
+  <div class="form-user">
+    <form action="/<%=person%>" method="post">
+      <div class="input-group mb-3">
+        <input required type="text" name="newItem" class="form-control form-custom" placeholder="Nowy"
+          autocomplete="off" maxlength="60">
+        <input type="url" name="newItemLink" class="form-control form-custom" placeholder="Link" autocomplete="off">
+        <button class="btn btn-outline-secondary">+</button>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer">
+    <a class="icon" href="/"><i class=" fa-solid fa-house"></a></i>
+  </div>
+</div>
+
+
+<%- include("partials/footer"); -%>

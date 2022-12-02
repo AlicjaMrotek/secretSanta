@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+  <div class="row">
+    <% people.forEach(function(person) { %>
+    <div class="col-lg-4 col-md-6">
+      <div class="single-person">
+        <a href="/<%= person.name %>"><img class="photos-bg" src="images/<%= person.name %>.jpg"></a>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>
+
+
+<%- include("partials/footer"); -%>
