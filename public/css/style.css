@@ -92,7 +92,7 @@ h1 {
 }
 
 .card-footer {
-  margin: 50px auto;
+  margin: 60px auto 0;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -145,6 +145,10 @@ h1 {
 
 .single-person {
   margin: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
 }
 
 /* footer {

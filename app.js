@@ -3,6 +3,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+// const ejsLint = require("ejs-lint");
+
 // const _ = require("lodash")
 
 const app = express();

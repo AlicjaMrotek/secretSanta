@@ -3,9 +3,10 @@
 <div class="container">
   <div class="row">
     <% people.forEach(function(person) { %>
-    <div class="col-lg-4 col-md-6">
+    <div class="col-lg-3 col-md-6">
       <div class="single-person">
-        <a href="/<%= person.name %>"><img class="photos-bg" src="images/<%= person.name %>.jpg"></a>
+        <a href="/<%= person.name %>"><img class="photos-bg" src="images/<%= person.name %>.jpg"
+            onerror="this.src='images/no-pic-found.png';this.onerror='';"></a>
       </div>
     </div>
     <% }); %>
