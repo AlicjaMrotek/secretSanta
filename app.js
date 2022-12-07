@@ -75,7 +75,7 @@ app.route("/")
     Person.find(function (err, foundPeople) {
       if (!err) {
         if (foundPeople) {
-          console.log(foundPeople);
+          // console.log(foundPeople);
           res.render("home", {
             people: foundPeople
           });
@@ -106,17 +106,20 @@ app.route("/:customPersonName")
             person: foundPerson.name,
             items: foundPerson.gifts
           });
-        } else {
-          const newPerson = new Person({
-            name: personName,
-            gifts: []
-          });
-          newPerson.save();
-          res.redirect(`/${personName}`);
         }
+        //Tworzenie nowych osob wyłączone        
+        // else {
+        //   const newPerson = new Person({
+        //     name: personName,
+        //     gifts: []
+        //   });
+        //   newPerson.save();
+        //   res.redirect(`/${personName}`);
+        // }
       }
     });
   })
+
   .post(function (req, res) {
     const personName = req.params.customPersonName;
     const newGift = new Item({
@@ -139,6 +142,35 @@ app.route("/:customPersonName")
         }
       });
   });
+
+
+//Work in progress...
+// app.post("/:customPersonName/edit", function (req, res) {
+//   console.log(req.body.editBut);
+// });
+
+app.post("/:customPersonName/delete", function (req, res) {
+  const deletedItemId = req.body.deleteBut;
+  const personName = req.params.customPersonName;
+
+  Person.findOneAndUpdate({
+      name: personName
+    }, {
+      $pull: {
+        gifts: {
+          _id: deletedItemId
+        }
+      }
+    },
+    function (err) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Successfully deleted item.");
+        res.redirect(`/${personName}`);
+      }
+    });
+});
 
 
 let port = process.env.PORT;

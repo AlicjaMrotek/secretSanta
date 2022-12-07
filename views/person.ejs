@@ -11,18 +11,50 @@
     </div>
   </div>
   <div class="list-group-user">
-    <ol class="list-group">
-      <% items.forEach(function(item) { %>
-      <li>
-        <%if (item.link) {%>
-        <a class="itemLink" target="_blank" rel="noopener noreferrer" href="<%= item.link %>"><%= item.item %></a>
-        <% } else {%>
-        <%= item.item %>
-        <% }%>
+    <% items.forEach(function(item) { %>
+    <div class="container lista">
+      <div class="row lista">
+        <div class="col col-10 cell">
+          <%= (items.indexOf(item)+1) + "." %>
+          <%if (item.link) {%>
+          <a class="itemLink" target="_blank" rel="noopener noreferrer" href="<%= item.link %>"><%= item.item %></a>
+          <% } else {%>
+          <%= item.item %>
+          <% }%>
+        </div>
+        <div class="col col-2 container-inline cell">
+          <form action="<%=person%>/edit" method="post">
+            <button class="button-icon" type="submit" name="editBut" value="<%= item._id %>" title="Edytuj" disabled>
+              <i class="fa-solid fa-pencil"></i>
+            </button>
+          </form>
 
-      </li>
-      <% }); %>
-    </ol>
+          <form action="<%=person%>/delete" method="post">
+            <button class="button-icon" type="submit" name="deleteBut" value="<%= item._id %>" title="Usuń">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+
+    <!-- <div class="container-inline">
+              
+              <form action="/<%=person%>" method="patch">
+                <button class="button-icon" type="submit" name="edit" value="item._id">
+                  <i class="fa-regular fa-pen-to-square"></i>
+                </button>
+              </form>
+              
+              <form action="/<%=person%>" method="delete">
+                <button class="button-icon" type="submit" name="delete" value="item._id">
+                  <i class="fa-regular fa-square-minus"></i>
+                </button>
+      </form>
+
+    </div> -->
+
   </div>
   <div class="form-user">
     <form action="/<%=person%>" method="post">
